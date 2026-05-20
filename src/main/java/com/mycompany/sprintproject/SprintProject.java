@@ -4,8 +4,18 @@
 
 package com.mycompany.sprintproject;
 
-import static com.raylib.Raylib.*;
-import static com.raylib.Colors.*;
+import static com.raylib.Colors.GREEN;
+import static com.raylib.Colors.LIGHTGRAY;
+import static com.raylib.Colors.RAYWHITE;
+import static com.raylib.Colors.SKYBLUE;
+import static com.raylib.Raylib.BeginDrawing;
+import static com.raylib.Raylib.ClearBackground;
+import static com.raylib.Raylib.CloseWindow;
+import static com.raylib.Raylib.DrawText;
+import static com.raylib.Raylib.EndDrawing;
+import static com.raylib.Raylib.InitWindow;
+import static com.raylib.Raylib.SetTargetFPS;
+import static com.raylib.Raylib.WindowShouldClose;
 
 /**
  *
