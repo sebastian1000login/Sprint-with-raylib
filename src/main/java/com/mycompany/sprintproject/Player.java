@@ -63,23 +63,23 @@ public class Player implements Shape
         }
     }
     
-    public void keepOnBounds()
+    public void keepOnBounds(int screenWidth, int screenHeight)
     {
         if (this.x < 0)
         {
             this.x = 0;
         }
-        if (this.x > 670)
+        if (this.x > screenWidth - this.size)
         {
-            this.x = 670;
+            this.x = screenWidth - this.size;
         }
         if (this.y < 0)
         {
             this.y = 0;
         }
-        if (this.y > 910)
+        if (this.y > screenHeight - this.size)
         {
-            this.y = 910;
+            this.y = screenHeight - this.size;
         }
     }
     

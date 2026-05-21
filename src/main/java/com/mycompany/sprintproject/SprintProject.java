@@ -24,11 +24,11 @@ public class SprintProject
         {
             // Aqui va toda la logica del game loop
             player.move();
-            player.keepOnBounds();
+            player.keepOnBounds(screenWidth, screenHeight);
             player.hitboxFollow();
             BeginDrawing();
             ClearBackground(RAYWHITE);
-            DrawText("Aqui va todo relacionado al drawing", 100, 500, 36, LIGHTGRAY);
+            DrawText("Aqui va todo relacionado al drawing", 50, 500, 36, LIGHTGRAY);
             player.draw();
             EndDrawing();
         }
