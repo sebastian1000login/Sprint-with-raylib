@@ -69,17 +69,17 @@ public class Player implements Shape
         {
             this.x = 0;
         }
-        if (this.x > 700)
+        if (this.x > 670)
         {
-            this.x = 700;
+            this.x = 670;
         }
         if (this.y < 0)
         {
             this.y = 0;
         }
-        if (this.y > 950)
+        if (this.y > 910)
         {
-            this.y = 950;
+            this.y = 910;
         }
     }
     
