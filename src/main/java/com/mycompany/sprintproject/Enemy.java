@@ -16,16 +16,17 @@ public class Enemy implements Shape
     Rectangle enm;
     float speedx;
     float speedy;
-    int hp = 1000;
+    int hp;
     Color color;
     float lastUpdate = (float) GetTime();
     float pattern1Timer = (float) .8;
     boolean collisiones = false;
-    public Enemy(float x, float y, float speedx, float speedy, int width, int height, Color color)
+    public Enemy(float x, float y, float speedx, float speedy, int width, int height, int hp, Color color)
     {
         this.enm = new Rectangle().x(x).y(y).height(height).width(width);
         this.speedx = speedx;
         this.speedy = speedy;
+        this.hp = hp;
         this.color = color;
     }
     
@@ -41,17 +42,5 @@ public class Enemy implements Shape
     public void draw()
     {
         DrawRectangleRec(this.enm, this.color);
-    }
-    
-    public void keepOnBounds(int screenWidth, int screenHeight)
-    {
-        if (this.enm.x() < 0 || this.enm.x() > screenWidth - this.enm.width())
-        {
-            this.speedx = -this.speedx;
-        }
-        if (this.enm.y() < 0 || this.enm.y() > (screenHeight * 0.25) - this.enm.height())
-        {
-            this.speedy = -this.speedy;
-        }
     }
 }

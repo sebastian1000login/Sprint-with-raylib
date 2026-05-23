@@ -20,7 +20,7 @@ public class SprintProject
         InitWindow(screenWidth, screenHeight, "Sprint project");
         SetTargetFPS(60);
         Player player = new Player(350, 800, 80, 50, 6, 10, SKYBLUE, GREEN);
-        Enemy boss = new Enemy(310, 50, 10, 5, 100, 100, GRAY);
+        Boss boss = new Boss(310, 50, 10, 5, 100, 100, 1000, GRAY);
         while(!WindowShouldClose())
         {
             // Aqui va toda la logica del game loop
