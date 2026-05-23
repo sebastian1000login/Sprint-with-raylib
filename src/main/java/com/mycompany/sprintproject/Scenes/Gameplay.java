@@ -12,30 +12,26 @@ import com.mycompany.sprintproject.Model.Scene;
 
 public class Gameplay extends SceneController {
 
-    Player player = new Player(350, 800, 80, 50, 6, 10, SKYBLUE, GREEN);
-    int screenWidth;
-    int screenHeight;
+    private Player player;
 
-    public Gameplay(Scene sceneManager, int screenWidth, int screenHeight) {
+    public Gameplay(Scene sceneManager) {
         super(sceneManager);
-        this.screenWidth = screenWidth;
-        this.screenHeight = screenHeight;
     }
 
     @Override
     public void init() {
-
+        this.player = new Player(350, 800, 80, 50, 6, 10, SKYBLUE, GREEN);
     }
 
     @Override
-    public void upd() {
+    public void update() {
         player.move();
         player.hitboxFollow();
-        player.keepOnBounds(screenWidth, screenHeight);
+        player.keepOnBounds(GetScreenWidth(), GetScreenHeight());
     }
 
     @Override
-    public void drw() {
+    public void draw() {
         ClearBackground(RAYWHITE);
         DrawText("Aqui va todo relacionado al drawing", 50, 500, 36, LIGHTGRAY);
         player.draw();

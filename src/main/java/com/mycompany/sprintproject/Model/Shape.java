@@ -4,8 +4,6 @@
  */
 package com.mycompany.sprintproject.Model;
 
-import com.raylib.Raylib.Color;
-
 /**
  *
  * @author sebastian

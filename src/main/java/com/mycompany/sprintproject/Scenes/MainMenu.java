@@ -15,12 +15,12 @@ public class MainMenu extends SceneController {
     }
 
     @Override
-    public void upd() {
+    public void update() {
 
     }
 
     @Override
-    public void drw() {
+    public void draw() {
 
     }
 }

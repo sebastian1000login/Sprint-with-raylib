@@ -16,8 +16,8 @@ public abstract class SceneController {
 
     public abstract void init();
 
-    public abstract void upd();
+    public abstract void update();
 
-    public abstract void drw();
+    public abstract void draw();
 
 }

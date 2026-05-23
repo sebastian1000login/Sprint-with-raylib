@@ -1,6 +1,7 @@
 package com.mycompany.sprintproject.Model;
 
 import com.mycompany.sprintproject.Controllers.SceneController;
+import com.mycompany.sprintproject.Scenes.MainMenu;
 
 /**
  *
@@ -21,6 +22,11 @@ public class Scene {
         return this.prevScene;
     }
 
+    public void init() {
+        this.currentScene = new MainMenu(this);
+        this.currentScene.init();
+    }
+
     // Cambia la escena activa e inicializa la nueva escena
     public void switchScene(SceneController newScene) {
         this.prevScene = this.currentScene;
@@ -34,14 +40,14 @@ public class Scene {
     // Delega la actualización a la escena activa
     public void update() {
         if (currentScene != null) {
-            currentScene.upd();
+            currentScene.update();
         }
     }
 
     // Delega el dibujo a la escena activa
     public void draw() {
         if (currentScene != null) {
-            currentScene.drw();
+            currentScene.draw();
         }
     }
 }

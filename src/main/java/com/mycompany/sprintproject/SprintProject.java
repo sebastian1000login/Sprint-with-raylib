@@ -20,12 +20,12 @@ public class SprintProject {
         SetTargetFPS(60);
 
         Scene sceneManager = new Scene();
-        sceneManager.switchScene(new Gameplay(sceneManager, screenWidth, screenHeight));
+        sceneManager.init();
         while (!WindowShouldClose()) {
             // Aqui va toda la logica del game loop
             sceneManager.update();
-            sceneManager.draw();
             BeginDrawing();
+            sceneManager.draw();
             EndDrawing();
         }
         CloseWindow();
