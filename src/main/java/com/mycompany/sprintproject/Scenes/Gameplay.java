@@ -7,8 +7,8 @@ import static com.raylib.Colors.SKYBLUE;
 import static com.raylib.Raylib.*;
 
 import com.mycompany.sprintproject.Controllers.SceneController;
-import com.mycompany.sprintproject.Model.Player;
 import com.mycompany.sprintproject.Model.Scene;
+import com.mycompany.sprintproject.Model.Gameplay.Player;
 
 public class Gameplay extends SceneController {
 

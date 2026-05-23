@@ -1,8 +1,7 @@
 package com.mycompany.sprintproject.Model.UI;
 
-import static com.raylib.Raylib.Color;
-
-import com.raylib.Raylib.Rectangle;
+import static com.raylib.Raylib.*;
+import static com.raylib.Colors.*;
 
 public class Button {
     private int width;
@@ -114,8 +113,65 @@ public class Button {
         this.foreground = foreground;
     }
 
+    private boolean hovered = false;
+
+    public boolean isHovered() {
+        return this.hovered;
+    }
+
+    public void setHovered(boolean hovered) {
+        this.hovered = hovered;
+    }
+
     public void init() {
         this.button = new Rectangle().x(x).y(y).width(width).height(height);
+    }
+
+    public void draw() {
+        if (this.button == null) {
+            init();
+        }
+
+        // Draw background
+        Color drawBgColor = this.background;
+        if (this.cornerRadius > 0) {
+            DrawRectangleRounded(this.button, this.cornerRadius, 8, drawBgColor);
+        } else {
+            DrawRectangleRec(this.button, drawBgColor);
+        }
+
+        // Draw outline / border
+        if (this.stroke > 0) {
+            if (this.cornerRadius > 0) {
+                DrawRectangleRoundedLines(this.button, this.cornerRadius, 8, this.foreground);
+            } else {
+                DrawRectangleLinesEx(this.button, this.stroke, this.foreground);
+            }
+        }
+
+        // Draw premium hover outline effect
+        if (this.hovered) {
+            Rectangle hoverRect = new Rectangle()
+                .x(this.button.x() - 3)
+                .y(this.button.y() - 3)
+                .width(this.button.width() + 6)
+                .height(this.button.height() + 6);
+            if (this.cornerRadius > 0) {
+                DrawRectangleRoundedLines(hoverRect, this.cornerRadius, 8, this.foreground);
+            } else {
+                DrawRectangleLinesEx(hoverRect, 2, this.foreground);
+            }
+        }
+
+        // Draw centered text
+        if (this.text != null) {
+            int textWidth = MeasureText(this.text.getText(), this.text.getFontSize());
+            int textX = this.x + (this.width - textWidth) / 2;
+            int textY = this.y + (this.height - this.text.getFontSize()) / 2;
+            this.text.setX(textX);
+            this.text.setY(textY);
+            this.text.draw();
+        }
     }
 
 }
