@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package com.mycompany.sprintproject;
+package com.mycompany.sprintproject.Model;
 
 import com.raylib.Raylib.Color;
 
@@ -10,8 +10,8 @@ import com.raylib.Raylib.Color;
  *
  * @author sebastian
  */
-public interface Shape
-{
+public interface Shape {
     public void move();
+
     public void draw();
 }

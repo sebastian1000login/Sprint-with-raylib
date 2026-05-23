@@ -11,7 +11,7 @@ buildNumber.properties
 .mvn/wrapper/maven-wrapper.jar
 
 # jpackage output
-SprintProject/
+/SprintProject/
 *.exe
 
 # IDEs
