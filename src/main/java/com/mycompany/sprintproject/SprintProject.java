@@ -20,15 +20,18 @@ public class SprintProject
         InitWindow(screenWidth, screenHeight, "Sprint project");
         SetTargetFPS(60);
         Player player = new Player(350, 800, 80, 50, 6, 10, SKYBLUE, GREEN);
+        Enemy boss = new Enemy(310, 50, 10, 5, 100, 100, GRAY);
         while(!WindowShouldClose())
         {
             // Aqui va toda la logica del game loop
             player.move();
             player.keepOnBounds(screenWidth, screenHeight);
             player.hitboxFollow();
+            boss.move();
+            boss.keepOnBounds(screenWidth, screenHeight);
             BeginDrawing();
             ClearBackground(RAYWHITE);
-            DrawText("Aqui va todo relacionado al drawing", 50, 500, 36, LIGHTGRAY);
+            boss.draw();
             player.draw();
             EndDrawing();
         }
