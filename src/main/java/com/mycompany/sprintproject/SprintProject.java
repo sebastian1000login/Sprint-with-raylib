@@ -12,8 +12,10 @@ import com.mycompany.sprintproject.Scenes.Gameplay;
  *
  * @author sebastian
  */
-public class SprintProject {
-    public static void main(String[] args) {
+public class SprintProject
+{
+    public static void main(String[] args)
+    {
         int screenWidth = 720;
         int screenHeight = 960;
         InitWindow(screenWidth, screenHeight, "Sprint project");
@@ -21,7 +23,8 @@ public class SprintProject {
 
         Scene sceneManager = new Scene();
         sceneManager.init();
-        while (!WindowShouldClose()) {
+        while (!WindowShouldClose())
+        {
             // Aqui va toda la logica del game loop
             sceneManager.update();
             BeginDrawing();
