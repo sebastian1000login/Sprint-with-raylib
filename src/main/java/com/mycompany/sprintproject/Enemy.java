@@ -11,7 +11,7 @@ import static com.raylib.Raylib.*;
  *
  * @author sebastian
  */
-public class Enemy implements Shape
+public abstract class Enemy implements Shape
 {
     Rectangle enm;
     float speedx;
