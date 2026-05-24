@@ -20,6 +20,16 @@
     </dependencies>
     
     <build>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/Utils</directory>
+                <targetPath>Utils</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

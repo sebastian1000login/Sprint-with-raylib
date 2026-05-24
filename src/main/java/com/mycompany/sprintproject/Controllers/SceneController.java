@@ -1,19 +1,21 @@
 package com.mycompany.sprintproject.Controllers;
 
+import com.mycompany.sprintproject.Model.Input;
 import com.mycompany.sprintproject.Model.Scene;
 
 /**
  *
  * @author alexis
  */
-public abstract class SceneController
-{
+public abstract class SceneController {
 
     protected Scene sceneManager;
 
-    public SceneController(Scene sceneManager)
-    {
+    protected Input input;
+
+    public SceneController(Scene sceneManager, Input input) {
         this.sceneManager = sceneManager;
+        this.input = input;
     }
 
     public abstract void init();
@@ -22,8 +24,6 @@ public abstract class SceneController
 
     public abstract void draw();
 
-    public void cleanup() {
-
-    }
+    public abstract void cleanup();
 
 }
