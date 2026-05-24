@@ -44,8 +44,6 @@ public class MainMenu extends SceneController {
         this.playController = new ButtonController(playBtn) {
             @Override
             public boolean onClick() {
-                StopSound(bgm);
-                UnloadSound(bgm);
                 sceneManager.switchScene(new Gameplay(sceneManager));
                 return true;
             }
@@ -81,7 +79,6 @@ public class MainMenu extends SceneController {
             @Override
             public boolean onClick() {
                 System.exit(0);
-                UnloadSound(bgm);
                 return true;
             }
 
@@ -126,5 +123,11 @@ public class MainMenu extends SceneController {
         if (exitController != null && exitController.getButton() != null) {
             exitController.getButton().draw();
         }
+    }
+
+    @Override
+    public void cleanup() {
+        StopSound(bgm);
+        UnloadSound(bgm);
     }
 }
