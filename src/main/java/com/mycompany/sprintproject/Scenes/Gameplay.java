@@ -1,5 +1,7 @@
 package com.mycompany.sprintproject.Scenes;
 
+import com.mycompany.sprintproject.Controllers.BossController;
+import com.mycompany.sprintproject.Controllers.PlayerController;
 import static com.raylib.Colors.GREEN;
 import static com.raylib.Colors.LIGHTGRAY;
 import static com.raylib.Colors.RAYWHITE;
@@ -9,13 +11,14 @@ import static com.raylib.Raylib.*;
 import com.mycompany.sprintproject.Controllers.SceneController;
 import com.mycompany.sprintproject.Model.Input;
 import com.mycompany.sprintproject.Model.Scene;
-import com.mycompany.sprintproject.Model.Gameplay.Player;
 import com.mycompany.sprintproject.Utils.AssetLoader;
+import static com.raylib.Colors.GRAY;
 import com.raylib.Raylib.Sound;
 
 public class Gameplay extends SceneController {
 
-    private Player player;
+    private PlayerController playerController;
+    private BossController bossController;
 
     Sound bgm = LoadSound(AssetLoader.getAssetPath("Utils/Sounds/BGM/Stage1.wav"));
 
@@ -26,22 +29,24 @@ public class Gameplay extends SceneController {
     @Override
     public void init() {
         this.input.setCurrentActionMap(Input.ActionMap.GAMEPLAY);
-        this.player = new Player(350, 800, 80, 50, 6, 10, SKYBLUE, GREEN, this.input);
+        playerController = new PlayerController();
+        bossController = new BossController();
+        playerController.createPlayer(350, 800, 80, 50, 6, 10, SKYBLUE, GREEN);
+        bossController.createBoss(310, -150, 15, 10, 100, 100, 100, GRAY);
         PlaySound(bgm);
     }
 
     @Override
     public void update() {
-        player.move();
-        player.hitboxFollow();
-        player.keepOnBounds(GetScreenWidth(), GetScreenHeight());
+        playerController.movePlayer();
+        bossController.bossCycle();
     }
 
     @Override
     public void draw() {
         ClearBackground(RAYWHITE);
-        DrawText("Aqui va todo relacionado al drawing", 50, 500, 36, LIGHTGRAY);
-        player.draw();
+        bossController.drawBoss();
+        playerController.drawPlayer();
     }
 
     @Override
