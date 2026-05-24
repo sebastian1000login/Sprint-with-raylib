@@ -2,26 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-<<<<<<<< HEAD:src/main/java/com/mycompany/sprintproject/Model/Gameplay/Enemy.java
 package com.mycompany.sprintproject.Model.Gameplay;
-========
-package com.mycompany.sprintproject.Model;
->>>>>>>> main:src/main/java/com/mycompany/sprintproject/Model/Enemy.java
 
 import static com.raylib.Raylib.*;
-
-import com.mycompany.sprintproject.Model.Shape;
 
 /**
  *
  * @author sebastian
  */
-<<<<<<<< HEAD:src/main/java/com/mycompany/sprintproject/Model/Gameplay/Enemy.java
 public class Enemy implements Shape {
-========
-public abstract class Enemy implements Shape
-{
->>>>>>>> main:src/main/java/com/mycompany/sprintproject/Model/Enemy.java
     Rectangle enm;
     float speedx;
     float speedy;

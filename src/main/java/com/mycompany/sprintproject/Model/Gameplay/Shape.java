@@ -1,4 +1,4 @@
-package com.mycompany.sprintproject.Model;
+package com.mycompany.sprintproject.Model.Gameplay;
 
 /**
  *
