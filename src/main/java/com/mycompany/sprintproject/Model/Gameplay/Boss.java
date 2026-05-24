@@ -2,11 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-<<<<<<<< HEAD:src/main/java/com/mycompany/sprintproject/Model/Gameplay/Boss.java
 package com.mycompany.sprintproject.Model.Gameplay;
-========
-package com.mycompany.sprintproject.Model;
->>>>>>>> main:src/main/java/com/mycompany/sprintproject/Model/Boss.java
 
 import com.raylib.Raylib;
 
