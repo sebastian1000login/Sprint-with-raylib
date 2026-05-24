@@ -22,4 +22,8 @@ public abstract class SceneController
 
     public abstract void draw();
 
+    public void cleanup() {
+
+    }
+
 }

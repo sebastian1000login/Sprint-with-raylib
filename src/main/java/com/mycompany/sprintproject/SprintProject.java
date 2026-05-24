@@ -19,6 +19,7 @@ public class SprintProject
         int screenWidth = 720;
         int screenHeight = 960;
         InitWindow(screenWidth, screenHeight, "Sprint project");
+        InitAudioDevice();
         SetTargetFPS(60);
 
         Scene sceneManager = new Scene();
@@ -31,6 +32,7 @@ public class SprintProject
             sceneManager.draw();
             EndDrawing();
         }
+        CloseAudioDevice();
         CloseWindow();
     }
 }

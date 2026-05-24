@@ -2,6 +2,7 @@ package com.mycompany.sprintproject.Model.UI;
 
 import static com.raylib.Colors.*;
 import com.raylib.Raylib.Color;
+import static com.raylib.Raylib.*;
 
 public class Label {
     private int width;
@@ -102,6 +103,9 @@ public class Label {
     }
 
     public void draw() {
+        if (this.text != null && !this.text.isEmpty()) {
+            DrawText(this.text, this.x, this.y, this.fontSize, this.textColor);
+        }
     }
 
 }

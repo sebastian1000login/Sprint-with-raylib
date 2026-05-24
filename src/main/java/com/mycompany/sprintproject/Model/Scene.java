@@ -29,6 +29,11 @@ public class Scene {
 
     // Cambia la escena activa e inicializa la nueva escena
     public void switchScene(SceneController newScene) {
+
+        if (this.currentScene != null) {
+            this.currentScene.cleanup();
+        }
+
         this.prevScene = this.currentScene;
         this.currentScene = newScene;
 
