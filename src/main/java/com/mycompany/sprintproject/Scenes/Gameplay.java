@@ -31,7 +31,7 @@ public class Gameplay extends SceneController {
         this.input.setCurrentActionMap(Input.ActionMap.GAMEPLAY);
         playerController = new PlayerController();
         bossController = new BossController();
-        playerController.createPlayer(350, 800, 80, 50, 6, 10, SKYBLUE, GREEN);
+        playerController.createPlayer(350, 800, 80, 50, 6, 10, SKYBLUE, GREEN, this.input);
         bossController.createBoss(310, -150, 15, 10, 100, 100, 100, GRAY);
         PlaySound(bgm);
     }
