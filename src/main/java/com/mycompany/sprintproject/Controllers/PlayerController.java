@@ -5,6 +5,7 @@
 package com.mycompany.sprintproject.Controllers;
 
 import com.mycompany.sprintproject.Model.Gameplay.Player;
+import com.mycompany.sprintproject.Model.Input;
 import com.raylib.Raylib;
 import static com.raylib.Raylib.GetScreenHeight;
 import static com.raylib.Raylib.GetScreenWidth;
@@ -18,9 +19,9 @@ public class PlayerController
     protected Player player;
     
     public void createPlayer(float x, float y, float speed, int size, int hitboxWidth, int hitboxHeight, Raylib.Color playerColor,
-            Raylib.Color hitboxColor)
+            Raylib.Color hitboxColor, Input input)
     {
-        this.player = new Player(x, y, speed, size, hitboxWidth, hitboxHeight, playerColor, hitboxColor);
+        this.player = new Player(x, y, speed, size, hitboxWidth, hitboxHeight, playerColor, hitboxColor, input);
     }
     
     public void movePlayer()
