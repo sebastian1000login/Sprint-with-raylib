@@ -5,9 +5,11 @@ import static com.raylib.Raylib.*;
 
 import com.mycompany.sprintproject.Controllers.ButtonController;
 import com.mycompany.sprintproject.Controllers.SceneController;
+import com.mycompany.sprintproject.Model.Input;
 import com.mycompany.sprintproject.Model.Scene;
 import com.mycompany.sprintproject.Model.UI.Button;
 import com.mycompany.sprintproject.Model.UI.Label;
+import com.mycompany.sprintproject.Utils.AssetLoader;
 import com.raylib.Raylib.Sound;
 
 public class MainMenu extends SceneController {
@@ -15,14 +17,16 @@ public class MainMenu extends SceneController {
     private ButtonController playController;
     private ButtonController exitController;
 
-    Sound bgm = LoadSound("Utils/Sounds/BGM/noOfficialMain.mp3");
+    Sound bgm = LoadSound(AssetLoader.getAssetPath("Utils/Sounds/BGM/noOfficialMain.mp3"));
+    Sound sfx_select = LoadSound(AssetLoader.getAssetPath("Utils/Sounds/SFX/button_select.wav"));
 
-    public MainMenu(Scene sceneManager) {
-        super(sceneManager);
+    public MainMenu(Scene sceneManager, Input input) {
+        super(sceneManager, input);
     }
 
     @Override
     public void init() {
+        this.input.setCurrentActionMap(Input.ActionMap.UI);
         int screenWidth = 720;
         int btnWidth = 260;
         int btnHeight = 60;
@@ -44,7 +48,7 @@ public class MainMenu extends SceneController {
         this.playController = new ButtonController(playBtn) {
             @Override
             public boolean onClick() {
-                sceneManager.switchScene(new Gameplay(sceneManager));
+                sceneManager.switchScene(new Gameplay(sceneManager, input));
                 return true;
             }
 
@@ -52,6 +56,7 @@ public class MainMenu extends SceneController {
             public boolean onHover() {
                 getButton().setBackground(SKYBLUE);
                 getButton().getText().setTextColor(BLACK);
+                PlaySound(sfx_select);
                 return true;
             }
 
@@ -86,6 +91,7 @@ public class MainMenu extends SceneController {
             public boolean onHover() {
                 getButton().setBackground(RED);
                 getButton().getText().setTextColor(WHITE);
+                PlaySound(sfx_select);
                 return true;
             }
 
@@ -128,6 +134,8 @@ public class MainMenu extends SceneController {
     @Override
     public void cleanup() {
         StopSound(bgm);
+        StopSound(sfx_select);
         UnloadSound(bgm);
+        UnloadSound(sfx_select);
     }
 }

@@ -13,6 +13,12 @@ public class Scene {
     private SceneController currentScene;
     private SceneController prevScene;
 
+    private Input input;
+
+    public Scene(Input input) {
+        this.input = input;
+    }
+
     // Getters tradicionales en Java
     public SceneController getCurrentScene() {
         return this.currentScene;
@@ -23,7 +29,7 @@ public class Scene {
     }
 
     public void init() {
-        this.currentScene = new MainMenu(this);
+        this.currentScene = new MainMenu(this, input);
         this.currentScene.init();
     }
 

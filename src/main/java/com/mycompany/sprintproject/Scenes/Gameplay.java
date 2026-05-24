@@ -9,7 +9,9 @@ import static com.raylib.Colors.SKYBLUE;
 import static com.raylib.Raylib.*;
 
 import com.mycompany.sprintproject.Controllers.SceneController;
+import com.mycompany.sprintproject.Model.Input;
 import com.mycompany.sprintproject.Model.Scene;
+import com.mycompany.sprintproject.Utils.AssetLoader;
 import static com.raylib.Colors.GRAY;
 import com.raylib.Raylib.Sound;
 
@@ -18,15 +20,15 @@ public class Gameplay extends SceneController {
     private PlayerController playerController;
     private BossController bossController;
 
-    Sound bgm = LoadSound("Utils/Sounds/BGM/Stage1.wav");
+    Sound bgm = LoadSound(AssetLoader.getAssetPath("Utils/Sounds/BGM/Stage1.wav"));
 
-    public Gameplay(Scene sceneManager) {
-        super(sceneManager);
+    public Gameplay(Scene sceneManager, Input input) {
+        super(sceneManager, input);
     }
 
     @Override
-    public void init()
-    {
+    public void init() {
+        this.input.setCurrentActionMap(Input.ActionMap.GAMEPLAY);
         playerController = new PlayerController();
         bossController = new BossController();
         playerController.createPlayer(350, 800, 80, 50, 6, 10, SKYBLUE, GREEN);
