@@ -6,11 +6,13 @@ import com.mycompany.sprintproject.Model.Scene;
  *
  * @author alexis
  */
-public abstract class SceneController {
+public abstract class SceneController
+{
 
     protected Scene sceneManager;
 
-    public SceneController(Scene sceneManager) {
+    public SceneController(Scene sceneManager)
+    {
         this.sceneManager = sceneManager;
     }
 

@@ -3,11 +3,13 @@ package com.mycompany.sprintproject.Controllers;
 import static com.raylib.Raylib.*;
 import com.mycompany.sprintproject.Model.UI.Button;
 
-public abstract class ButtonController {
+public abstract class ButtonController
+{
     private Button button;
     private boolean isHovered = false;
 
-    public ButtonController(Button button) {
+    public ButtonController(Button button)
+    {
         this.button = button;
     }
 
